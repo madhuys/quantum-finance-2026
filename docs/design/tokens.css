@@ -1,4 +1,3 @@
-/* QUANTUM FINANCE 2026–2027 · Black edition — design tokens (shared by print.css and style.css) */
 @font-face { font-family: "Space Grotesk"; src: url("../fonts/SpaceGrotesk-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Space Grotesk"; src: url("../fonts/SpaceGrotesk-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
@@ -6,26 +5,21 @@
 @font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-
 :root {
-  /* grounds */
   --black: #000000;
-  --g0: #0A0A0A;   /* page */
-  --g1: #111111;   /* card */
-  --g2: #1A1A1A;   /* raised / table zebra */
-  --g3: #2A2A2A;   /* hairline */
-  --g4: #3A3A3A;   /* strong rule */
-  /* type */
-  --ink: #F5F5F5;  /* brand "deep white" */
+  --g0: #0A0A0A;   
+  --g1: #111111;   
+  --g2: #1A1A1A;   
+  --g3: #2A2A2A;   
+  --g4: #3A3A3A;   
+  --ink: #F5F5F5;  
   --ink-2: #C9C9C9;
-  --mute: #9CA3AF; /* brand muted foreground (dark) */
+  --mute: #9CA3AF; 
   --mute-2: #6B7280;
-  /* signal */
-  --lime: #D0EF1B; /* the Q-FINEX "Q" */
-  --neon: #E6FF3D; /* glow variant: light, never body text */
+  --lime: #D0EF1B; 
+  --neon: #E6FF3D; 
   --lime-dim: rgba(208, 239, 27, 0.14);
   --lime-line: rgba(208, 239, 27, 0.45);
-  /* families */
   --f-head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --f-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;

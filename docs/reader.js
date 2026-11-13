@@ -1,12 +1,8 @@
-// Quantum Finance 2026-2027 Vol 1 Microsite reader (PROVE v4 architecture):
-// black edition: glass app bar, reading progress and citation drawer (hero lives in hero.js).
 (function () {
   var root = document.documentElement;
   var bar = document.querySelector('.bar');
   var heroEl = document.querySelector('.hero');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  // ---- App bar glass & paper state + reading progress
   function onScroll() {
     if (heroEl && bar) {
       var r = heroEl.getBoundingClientRect();
@@ -20,15 +16,12 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
-
-  // ---- Subtle pointer/scroll parallax on hero planes (respects prefers-reduced-motion)
   if (!reduce.matches && heroEl) {
     var plate = heroEl.querySelector('.plate');
     var glow = heroEl.querySelector('.glow');
     var near = heroEl.querySelector('.near');
     var orbit = heroEl.querySelector('.hero-orbit');
     var mx = 0, my = 0, tmx = 0, tmy = 0, raf = false, heroVis = true;
-
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
         heroVis = es[0].isIntersecting;
@@ -59,8 +52,6 @@
       if (Math.abs(tmx - mx) > 0.002 || Math.abs(tmy - my) > 0.002) tickKick();
     }
   }
-
-  // ---- Citation popover drawer (fixed bottom-right, page never jumps unexpectedly)
   var pop = document.querySelector('.pop');
   if (pop) {
     var popT = pop.querySelector('.pop-t');
@@ -68,7 +59,6 @@
     var popSrc = pop.querySelector('.pop-src');
     var popGo = pop.querySelector('.pop-go');
     var opener = null;
-
     function closePop() {
       pop.hidden = true;
       if (opener) {
@@ -76,7 +66,6 @@
         opener = null;
       }
     }
-
     document.addEventListener('click', function (e) {
       var a = e.target.closest('a.cite-link[data-ref]');
       if (a) {
@@ -102,7 +91,6 @@
         closePop();
       }
     });
-
     pop.querySelector('.pop-x').addEventListener('click', closePop);
     popGo.addEventListener('click', function (e) {
       e.preventDefault();
@@ -120,8 +108,6 @@
       if (e.key === 'Escape' && !pop.hidden) closePop();
     });
   }
-
-  // ---- Reveal on scroll + chapter-in-view (skipped with reduced motion)
   if (!reduce.matches && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -132,4 +118,40 @@
     }, { rootMargin: '-35% 0px -35% 0px' });
     document.querySelectorAll('.chapter').forEach(function (el) { cio.observe(el); });
   }
+})();
+
+/* Tap to enlarge (13 Nov 2026): a diagram opens full screen at a readable width and pans. */
+(function () {
+  var SEL = '.pb-fig svg, .qfig svg.qf-svg, .chart-card svg.chart';
+  var dlg = null, box = null, last = null;
+  function close() { if (dlg && dlg.open) dlg.close(); if (last) last.focus({ preventScroll: true }); }
+  function open(svg) {
+    if (!dlg) {
+      dlg = document.createElement('dialog');
+      dlg.className = 'zoom-dlg';
+      dlg.setAttribute('aria-label', 'Enlarged diagram');
+      dlg.innerHTML = '<button type="button" class="zoom-x">Close ×</button><div class="zoom-scroll"></div>';
+      document.body.appendChild(dlg);
+      box = dlg.querySelector('.zoom-scroll');
+      dlg.querySelector('.zoom-x').addEventListener('click', close);
+      dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target === box) close(); });
+    }
+    var c = svg.cloneNode(true);
+    c.removeAttribute('class'); c.setAttribute('class', svg.getAttribute('class') || '');
+    box.replaceChildren(c);
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    box.scrollLeft = 0; box.scrollTop = 0;
+  }
+  document.querySelectorAll(SEL).forEach(function (svg) {
+    var host = svg.closest('.pb-fig, .qf-mob, .qf-desk, .qf-scroll, .chart-card') || svg.parentNode;
+    svg.classList.add('zoomable');
+    svg.setAttribute('tabindex', '0');
+    if (!svg.getAttribute('role')) svg.setAttribute('role', 'img');
+    svg.addEventListener('click', function () { last = svg; open(svg); });
+    svg.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); last = svg; open(svg); } });
+    if (host && host.classList && host.classList.contains('pb-fig')) {
+      var cap = host.querySelector('figcaption');
+      if (cap && !host.querySelector('.zoom-hint')) { var h = document.createElement('p'); h.className = 'zoom-hint'; h.textContent = 'Tap the diagram to enlarge'; host.insertBefore(h, cap); }
+    }
+  });
 })();

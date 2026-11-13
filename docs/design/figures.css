@@ -1,5 +1,3 @@
-/* Native figures (figures.py) — black + neon lime. Sizes in em: print.css sets .qfig to 9.4pt,
-   style.css to 16px, so the smallest label (0.92em) is ≥ 8.6pt in print. */
 .qfig{background:#000;border:1px solid var(--g3);padding:1.6em 1.7em 1.3em;color:var(--ink);font-family:var(--f-body);line-height:1.35;position:relative}
 .qfig::before{content:"";position:absolute;left:-1px;top:-1px;width:3.2em;height:3px;background:var(--lime)}
 .qfig p{margin:0;color:inherit;font-size:1em}
@@ -19,16 +17,12 @@
 .qf-k{font:700 .92em var(--f-mono);letter-spacing:.08em;color:var(--lime)}
 .qf-ic{width:2.6em;height:2.6em;color:var(--lime);flex:0 0 auto;display:block}
 .qf-svg{width:100%;height:auto;display:block;margin-top:.6em}
-
-/* 1 · headline numbers */
 .qf-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7em}
 .qf-stat{border:1px solid var(--g4);padding:1em .95em 1.1em;background:#0B0B0B;display:flex;flex-direction:column;gap:.45em}
 .qf-num{font:700 1.8em/1.05 var(--f-head)!important;color:var(--lime)!important;letter-spacing:-.02em;text-shadow:0 0 .8em rgba(230,255,61,.18)}
 .qf-txt{font-size:.98em!important;color:var(--ink-2)!important}
 .qf-stat-hot{background:var(--lime);border-color:var(--lime)}
 .qf-stat-hot .qf-num,.qf-stat-hot .qf-txt,.qf-stat-hot .qf-k{color:#000!important;text-shadow:none}
-
-/* 3 · quick-start scorecard */
 .qf-qs{counter-reset:none}
 .qf-q{display:grid;grid-template-columns:4.4em 1fr;gap:1.1em;padding:1em 0;border-top:1px solid var(--g3)}
 .qf-q:first-child{border-top:2px solid var(--lime)}
@@ -40,8 +34,6 @@
 .qf-chips{display:flex;flex-wrap:wrap;gap:.5em}
 .qf-chip{display:inline-flex;align-items:center;gap:.5em;font:400 .95em var(--f-mono);letter-spacing:.02em;padding:.38em .75em .38em .5em;border:1px solid var(--g4);color:var(--ink);border-radius:2em;white-space:nowrap}
 .qf-box{width:1em;height:1em;border:1.5px solid var(--lime);border-radius:.15em;flex:0 0 auto}
-
-/* 4 · secrecy and trust */
 .qf-band{border:1px solid var(--g4);background:#0D0D0D;padding:.75em 1em;text-align:center;font:400 1.02em var(--f-body)}
 .qf-band-hot{background:var(--lime);color:#000;border-color:var(--lime);font-weight:700;margin-top:.9em}
 .qf-band-foot{margin-top:.9em;font-weight:700}
@@ -57,8 +49,6 @@
 .qf-item{border:1px solid var(--g4);background:#0D0D0D;padding:.7em .85em}
 .qf-item-h{font:700 1.05em var(--f-head)!important}
 .qf-item-t{font-size:.95em!important;color:var(--mute)!important;margin-top:.15em!important}
-
-/* 5 · Mosca */
 .qf-mosca{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3em 1em;margin:.3em 0 .6em!important}
 .qf-mosca-k{font:700 1em var(--f-body);color:var(--mute)}
 .qf-eq{font:700 1.7em var(--f-head);letter-spacing:-.01em;color:var(--ink)}
@@ -69,8 +59,6 @@
 .qf-legend b{color:#fff}
 .qf-sw{display:inline-grid;place-items:center;width:1.5em;height:1.5em;font:700 .92em var(--f-mono)}
 .qf-sw-x{background:var(--lime);color:#000}.qf-sw-y{background:#F5F5F5;color:#000}.qf-sw-z{border:1.5px solid var(--lime);color:var(--lime)}
-
-/* 7 · first year */
 .qf-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:.7em;position:relative;margin-top:.4em}
 .qf-dia-row{position:relative;height:1.5em;display:grid;place-items:center}
 .qf-dia-row::before{content:"";position:absolute;left:-.4em;right:-.4em;top:50%;height:2px;background:var(--g4)}
@@ -86,8 +74,6 @@
 .qf-phase-hot .qf-phase-card{border:1.5px solid var(--lime);background:rgba(208,239,27,.08)}
 .qf-phase-hot .qf-dia{background:var(--lime);border-color:var(--lime);box-shadow:0 0 .8em rgba(230,255,61,.6)}
 .qf-phase-hot .qf-phase-out{font-weight:700;color:var(--lime)}
-
-/* 8 · matrix */
 .qf-matrix{display:grid;grid-template-columns:2em 1fr;grid-template-rows:auto auto;gap:.5em .6em}
 .qf-axis-y{grid-row:1;writing-mode:vertical-rl;transform:rotate(180deg);text-align:right;font:400 .95em var(--f-mono);color:var(--mute);border-right:2px solid var(--g4);padding-left:.4em;position:relative}
 .qf-axis-x{grid-column:2;text-align:right;font:400 .95em var(--f-mono);color:var(--mute);border-top:2px solid var(--g4);padding-top:.4em}
@@ -98,8 +84,6 @@
 .qf-cell-hot{background:var(--lime);border-color:var(--lime)}
 .qf-cell-hot .qf-cell-h,.qf-cell-hot .qf-cell-t{color:#000!important}
 .qf-cell-dim{border-style:dashed}
-
-/* 10 · Challenge */
 .qf-kicker{font:700 .95em var(--f-mono)!important;letter-spacing:.2em;color:var(--lime)!important;margin-bottom:.5em!important}
 .qf-kicker span{margin-left:1.6em;color:var(--mute)}
 .qf-kicker-2{margin-top:1.2em!important}
@@ -135,8 +119,6 @@
 .qf-admin-l{border-right:1px solid var(--g4);padding-right:1.4em}
 .qf-partner{background:var(--lime);color:#000!important;font:400 1.05em var(--f-head)!important;padding:.75em 1em;text-align:center}
 .qf-partner b{font-weight:700}.qf-partner i{font-style:normal;margin:0 .5em;opacity:.6}
-
-/* 11 · communities */
 .qf-eco3{display:grid;grid-template-columns:1fr 1.05fr 1fr;grid-template-rows:auto auto;gap:.7em;margin:.9em 0 0}
 .qf-core{grid-column:2;grid-row:1/3;border:2px solid var(--lime);background:#050505;padding:1em;display:flex;flex-direction:column;gap:.55em;box-shadow:0 0 2em rgba(208,239,27,.10)}
 .qf-c-fin{grid-column:1;grid-row:1}.qf-c-reg{grid-column:1;grid-row:2}.qf-c-qco{grid-column:3;grid-row:1}.qf-c-res{grid-column:3;grid-row:2}
@@ -156,8 +138,6 @@
 .qf-ways li{border:1px solid var(--g4);padding:.5em;text-align:center;font-size:.98em;background:#0D0D0D}
 .qf-rule{font-size:.92em!important;color:var(--mute)!important;text-align:center;margin-top:auto!important}
 .qf-rule b{color:#fff}
-
-/* 12 · ecosystem */
 .qf-eco{display:grid;grid-template-columns:1fr;gap:1em}
 .qf-eco-l{display:flex;flex-direction:column;align-items:center}
 .qf-eco-l .qf-scroll{width:100%}
@@ -178,22 +158,18 @@
 .qf-phase-out{min-height:2.6em}
 @media (max-width:700px){.qf-eco-r{grid-template-columns:1fr}}
 .qf-eco>*,.qf-eco-l,.qf-scroll,.qfig{min-width:0;max-width:100%}
-
-/* ---- breathing room (v3): roomier rhythm inside every native figure ---- */
 .qfig{line-height:1.45;padding:2.2em 2.2em 1.9em}
 .qfig p,.qfig li{line-height:1.45}
 .qf-title{margin-bottom:.5em!important;line-height:1.2!important}
 .qf-sub{margin-bottom:1.5em!important}
 .qf-title+.qf-stats,.qf-title+.qf-band,.qf-title+.qf-mosca,.qf-title+.qf-phases,.qf-title+.qf-matrix{margin-top:1.5em}
 .qf-note{margin-top:1.6em!important;line-height:1.5!important}
-/* quick start: rows, chips and icons spaced out */
 .qf-q{padding:1.7em 0;gap:1.5em;grid-template-columns:4.6em 1fr}
 .qf-q-ic{gap:.6em}
 .qf-q-h{margin-bottom:.6em!important}
 .qf-q-t{margin-bottom:1.15em!important;line-height:1.5!important}
 .qf-chips{gap:.8em 1em}
 .qf-chip{padding:.5em 1em .5em .7em;line-height:1.3}
-/* cards and cells */
 .qf-stats,.qf-phases,.qf-tracks{gap:1.1em}
 .qf-stat{padding:1.3em 1.2em 1.4em;gap:.7em}
 .qf-two,.qf-grid2{gap:1.1em}
@@ -242,3 +218,46 @@
 .qfig .qf-ways li,.section .qfig .qf-ways li,.flow .qfig .qf-ways li{padding:.65em}
 .qfig .qf-legend li{margin:0}
 .qfig .qf-comm li,.section .qfig .qf-comm li,.flow .qfig .qf-comm li{margin-bottom:.25em}
+.qf-phase .qf-k{white-space:nowrap}
+.qfig .qf-phase-out{min-height:2.95em}
+.qf-tracks>*,.qf-chal>*,.qf-stats>*,.qf-phases>*,.qf-eco3>*{min-width:0}
+@media (max-width:1100px){.qf-tracks{grid-template-columns:1fr 1fr}}
+
+/* ---- phone layouts of the wide figures (13 Nov 2026) ----
+   .qf-desk = the wide 1000-unit drawing, .qf-mob = its narrow phone version (same words and numbers).
+   Print and wide screens show .qf-desk; a phone-width screen swaps them. */
+.qf-mob{display:none}
+@media screen and (max-width:700px){
+  .qf-desk{display:none!important}
+  .qf-mob{display:block;max-width:520px;margin-left:auto;margin-right:auto}
+  .qf-mob .qf-svg,.qf-mob svg.chart{width:100%;height:auto;display:block;min-width:0!important}
+  .qf-mob svg.chart+svg.chart{margin-top:1.6em}
+}
+.qf-eco-m-hub{margin:.4em 0 1em!important;text-align:center;border:3px solid var(--lime);border-radius:999px;padding:.9em 1em;box-shadow:0 0 24px rgba(230,255,61,.18)}
+.qf-eco-m-hub b{display:block;font:700 1.6em var(--f-head);color:var(--lime)}
+.qf-eco-m-hub span{color:var(--ink);font-size:.95em}
+.qf-eco-m-nodes{list-style:none;margin:0 0 1em!important;padding:0!important;display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+.qf-eco-m-nodes li{margin:0!important;border:2px solid var(--ink);border-radius:8px;background:#0A0A0A;padding:.7em .7em;display:flex;flex-direction:column;gap:.25em}
+.qf-eco-m-nodes b{font:700 .98em/1.25 var(--f-head);color:var(--ink)}
+.qf-eco-m-nodes span{font-size:.86em;line-height:1.35;color:var(--mute)}
+.qf-eco-m-nodes .qf-eco-m-fin,.qf-eco-m-nodes .qf-eco-m-res{border-color:var(--lime)}
+.qf-eco-m-nodes .qf-eco-m-fin b,.qf-eco-m-nodes .qf-eco-m-res b{color:var(--lime)}
+.qf-eco-m-nodes .qf-eco-m-res,.qf-eco-m-nodes .qf-eco-m-pol{border-style:dashed}
+@media screen and (max-width:360px){.qf-eco-m-nodes{grid-template-columns:1fr}}
+/* the Challenge's four track cards: 4 across only when there is room */
+@media screen and (max-width:1100px){.qf-tracks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:460px){.qf-tracks{grid-template-columns:minmax(0,1fr)}}
+.qf-track>div{min-width:0}
+.qfig .qf-eco-m-nodes li{padding:.75em .8em!important}
+/* matrix: the two columns may shrink below their longest word on the narrowest phones */
+.qf-matrix{grid-template-columns:2em minmax(0,1fr)}
+.qf-grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.qf-cell{min-width:0;overflow-wrap:break-word;hyphens:auto}
+@media screen and (max-width:420px){
+  .qf-matrix{grid-template-columns:1.6em minmax(0,1fr);gap:.6em .5em}
+  .qf-grid2{gap:.5em}
+  .qf-cell{padding:.85em .7em;min-height:0}
+  .qf-cell-h{font-size:1.08em!important}
+  .qf-cell-t{font-size:.93em!important}
+  .qf-axis-x{font-size:.85em}
+}

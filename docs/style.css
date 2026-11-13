@@ -1,5 +1,3 @@
-/* QUANTUM FINANCE 2026–2027 · Vol 1 — microsite, black edition (black + neon lime).
-   Tokens come from design/tokens.css. Black is the edition: no light theme. */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--black)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -10,8 +8,6 @@ a{color:inherit}
 .skip{position:absolute;left:-999px;top:0;background:var(--lime);color:#000;padding:.6rem 1rem;z-index:90;font-weight:700}
 .skip:focus{left:1rem;top:1rem}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px}
-
-/* ---------- top bar ---------- */
 .bar{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--edge);color:#fff;transition:background-color .25s,border-color .25s}
 .bar.glass{background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--g3)}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
@@ -29,8 +25,6 @@ a{color:inherit}
 .progress-rail{position:fixed;left:0;top:0;height:2px;width:var(--scroll-p,0%);background:var(--lime);box-shadow:0 0 12px var(--neon);z-index:60}
 @media (max-width:1180px){.bar-nav{display:none}}
 @media (max-width:560px){.tag{display:none}.gftn-mark{height:16px}.qf-mark{height:16px}}
-
-/* ---------- hero: one qubit on a Bloch sphere ---------- */
 .hero{position:relative;min-height:100svh;background:#000;overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;background:
   radial-gradient(60% 70% at 72% 44%,rgba(208,239,27,.10),transparent 60%),
@@ -65,8 +59,6 @@ a{color:inherit}
   .hero-qfinex-lockup{display:none}
   .hero-legend{display:none}
 }
-
-/* ---------- section scaffolding ---------- */
 main{display:block}
 .frontmatter,.execsum-band,.chapter,.endmatter{display:grid;grid-template-columns:minmax(200px,280px) minmax(0,760px);gap:clamp(28px,5vw,88px);padding:110px var(--edge) 90px;border-top:1px solid var(--g3)}
 .execsum-band{background:var(--g1)}
@@ -83,7 +75,6 @@ main{display:block}
   .chapter-no{font-size:64px;margin-bottom:6px}
   .rail-tag{display:none}
 }
-
 .section h2{font:700 clamp(30px,3.4vw,46px)/1.08 var(--f-head);letter-spacing:-.02em;margin:0 0 32px;color:var(--ink);text-wrap:balance}
 .section h3{font:700 23px/1.25 var(--f-head);margin:52px 0 14px;color:var(--ink);display:flex;gap:14px;align-items:baseline}
 .section h3::before{content:"";flex:0 0 10px;height:10px;background:var(--lime);transform:translateY(-3px)}
@@ -99,8 +90,6 @@ main{display:block}
 .cite-grp{font:400 13px var(--f-mono);color:var(--mute);white-space:nowrap}
 .cite-link{color:var(--lime);text-decoration:none;padding:0 1px}
 .cite-link:hover{background:var(--lime);color:#000}
-
-/* callouts */
 .callout{background:var(--g1);border-left:4px solid var(--lime);padding:26px 30px 10px;margin:34px 0}
 .callout .box-title{font:700 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--lime)!important;margin:0 0 14px}
 .callout .box-title strong{color:var(--lime)}
@@ -112,14 +101,10 @@ main{display:block}
 .qr-frame{width:120px;height:120px;background:#fff;padding:8px;flex:0 0 auto}
 .qr-frame img{width:100%;height:100%;display:block}
 .inline-qr{background:var(--g1);padding:18px 22px;margin:20px 0}
-
-/* epigraph */
 .epigraph{margin:6px 0 40px;padding:0 0 0 44px;position:relative}
 .epigraph::before{content:"“";position:absolute;left:0;top:-22px;font:700 76px var(--f-head);color:var(--lime)}
 .epigraph p{font:400 24px/1.4 var(--f-head)!important;color:var(--ink)!important;margin:0 0 12px!important}
 .epigraph footer{font:400 13px var(--f-mono);color:var(--mute)}
-
-/* figures: full measure, white plates on black */
 figure{margin:38px 0 44px}
 .fig-mat{background:#F5F5F5;padding:14px;display:flex;justify-content:center}
 .fig-mat img{display:block;width:100%;height:auto}
@@ -130,8 +115,6 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
 .chart-card{background:#000;border:1px solid var(--g3);padding:26px 28px 18px}
 .chart-card .chart-eyebrow{font:400 11px var(--f-mono)!important;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)!important;margin:0 0 16px!important}
 .chart-card svg.chart{width:100%;height:auto;display:block;margin-bottom:22px}
-
-/* ledger tables */
 .led-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .led{width:100%;border-collapse:collapse;font:400 15px/1.5 var(--f-body);min-width:560px}
 .led thead th{font:700 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lime);text-align:left;padding:12px 14px;border-top:3px solid var(--lime);border-bottom:1px solid var(--g4);background:var(--g1);vertical-align:bottom}
@@ -140,8 +123,6 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
 .led tbody tr{border-bottom:1px solid var(--g3)}
 .led tbody tr:nth-child(even){background:#121212}
 .led tr.tbl-group td{font:700 11px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:#000;background:var(--lime);padding:7px 14px}
-
-/* contents */
 .contents{padding:110px var(--edge) 100px;border-top:1px solid var(--g3);display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(28px,5vw,88px);background:#000}
 .contents h2{font:700 clamp(44px,5vw,72px)/1 var(--f-head);letter-spacing:-.03em;margin:0 0 18px}
 .contents .note{font:400 14px/1.6 var(--f-mono);color:var(--mute)}
@@ -157,8 +138,6 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
 .toc a:hover .t{color:var(--lime)}
 .toc small{font:400 11px var(--f-mono);letter-spacing:.12em;color:var(--mute-2);padding-top:5px}
 @media (max-width:900px){.contents{grid-template-columns:minmax(0,1fr);padding:80px var(--gutter)}.toc li{grid-template-columns:44px 1fr}.toc small{display:none}}
-
-/* part banners: black field, giant outlined numeral, a quantum motif per part */
 .part-banner{position:relative;overflow:hidden;background:#000;border-top:1px solid var(--g3);min-height:92svh;display:flex;align-items:flex-end;padding:120px var(--edge) 90px;isolation:isolate}
 .part-banner::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(1px 1px at 1px 1px,rgba(245,245,245,.12) 1px,transparent 1.5px) 0 0/34px 34px;
   -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
@@ -180,8 +159,6 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
   .pb-vis{top:40px;transform:none;right:-10vw;width:110vw;opacity:.55}
   .pb-num{top:40px;left:var(--gutter);font-size:150px}
 }
-
-/* statement bands: one verbatim line, full viewport, black */
 .st-band{position:relative;overflow:hidden;background:#000;border-top:1px solid var(--g3);min-height:92svh;display:flex;align-items:center;padding:110px var(--edge) 300px;isolation:isolate}
 .st-vis{position:absolute;left:0;right:0;bottom:30px;height:240px;z-index:-1;opacity:.9}
 .st-vis svg{width:100%;height:100%;display:block}
@@ -197,19 +174,13 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
 .st-q .cite-grp{font-size:.32em;vertical-align:super}
 .st-src{font:400 13px var(--f-mono);color:var(--mute);margin:30px 0 0;letter-spacing:.06em}
 @media (max-width:900px){.st-band,.st-band:has(svg.bloch){min-height:auto;padding:90px var(--gutter) 230px}.st-band:has(svg.bloch) .st-in{max-width:none}.st-vis{height:190px;bottom:16px}.st-vis:has(svg.bloch){top:auto;height:260px;width:100%;right:0;bottom:-30px}}
-
-/* in-view accents (reader.js adds .in): nothing is ever hidden; highlights sweep in */
 .st-q .hl{background:linear-gradient(var(--lime),var(--lime)) 0 100%/0% 3px no-repeat;transition:background-size 1.2s cubic-bezier(.2,.7,.2,1)}
 .st-band.in .st-q .hl{background-size:100% 3px}
 .pb-num{transition:text-shadow 1s,opacity 1s}
 .part-banner.in .pb-num{text-shadow:0 0 60px rgba(230,255,61,.25)}
 @media (prefers-reduced-motion:reduce){.st-q .hl{transition:none;background-size:100% 3px}}
-
-/* chapter numerals glow when the chapter is on screen */
 .chapter-no{transition:color .6s,-webkit-text-stroke-color .6s,text-shadow .6s}
 .chapter.in-view .chapter-no{color:var(--lime);text-shadow:0 0 40px rgba(230,255,61,.35)}
-
-/* references */
 .sources{padding:110px var(--edge) 100px;border-top:1px solid var(--g3);background:var(--g1)}
 .sources-head h2{font:700 clamp(40px,4.6vw,64px)/1 var(--f-head);margin:0 0 14px;letter-spacing:-.03em}
 .sources-head .note{font:400 14px var(--f-mono);color:var(--mute);margin:0 0 40px}
@@ -218,8 +189,6 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
 .ref-num{font:700 13px var(--f-mono);color:var(--lime)}
 .ref-item a{color:var(--mute)}
 .ref-item.flash{background:var(--lime-dim);outline:1px solid var(--lime)}
-
-/* end matter */
 .endmatter{background:var(--g0)}
 .endmatter .section p,.endmatter .section li{font-size:16px}
 .endmatter-colophon{margin-top:36px;padding-top:18px;border-top:1px solid var(--g3);font:400 13px/1.7 var(--f-mono)!important;color:var(--mute)!important}
@@ -234,8 +203,6 @@ figcaption{display:flex;gap:14px;margin-top:12px;font:400 14px/1.5 var(--f-body)
 footer.end{background:#000;border-top:1px solid var(--g3);padding:40px var(--edge);font:400 12px/1.7 var(--f-mono);color:var(--mute-2)}
 .foot-brand{display:flex;gap:22px;align-items:center;margin-bottom:16px}
 .gftn-foot{height:18px}.qf-foot{height:30px}
-
-/* citation drawer */
 .pop{position:fixed;right:20px;bottom:20px;z-index:80;width:min(440px,calc(100vw - 40px));background:#000;border:1px solid var(--lime);box-shadow:0 0 40px rgba(208,239,27,.18);padding:22px 22px 18px}
 .pop[hidden]{display:none}
 .pop-x{position:absolute;right:10px;top:8px;background:none;border:0;color:var(--ink);font-size:24px;cursor:pointer}
@@ -244,19 +211,15 @@ footer.end{background:#000;border-top:1px solid var(--g3);padding:40px var(--edg
 .pop-q{margin:0 0 14px;font:400 14px/1.55 var(--f-body);color:var(--ink-2);overflow-wrap:anywhere}
 .pop-acts{display:flex;gap:16px;flex-wrap:wrap;margin:0;font:400 13px var(--f-mono)}
 .pop-acts a{color:var(--lime)}
-
 @media (max-width:560px){
   body{font-size:17px}
   .section h2+p{font-size:19px}
   .callout{padding:22px 20px 6px}
   .qr-row,.inline-qr{flex-direction:column;align-items:flex-start}
 }
-
 .section,.chapter-rail,.toc,.contents-head{min-width:0}
 figure,.led-card{max-width:100%}
 @media (max-width:900px){.pb-vis:has(svg.bloch){width:78vw;right:-12vw;top:24px}}
-
-/* native figures on the web */
 .qfig{font-size:16px}
 @media (max-width:700px){
   .qfig{font-size:14.5px;padding:1.2em 1em}
@@ -271,7 +234,6 @@ figure,.led-card{max-width:100%}
   .qf-admin{grid-template-columns:1fr}.qf-admin-l{border:0;padding:0}
   .qf-q{grid-template-columns:3em 1fr;gap:.7em}
 }
-/* composed motifs: keep banner graphics clear of the title block */
 .pb-vis{top:64px;width:min(44vw,640px)}
 .pb-vis:has(svg.bloch){width:min(36vw,520px);top:40px}
 .part-banner{min-height:max(92svh,880px)}
@@ -284,8 +246,6 @@ figure,.led-card{max-width:100%}
   .pb-vis,.pb-vis:has(svg.bloch){left:var(--gutter);right:var(--gutter);width:auto;top:200px;opacity:.95;transform:none}
   .pb-vis:has(svg.bloch){left:auto;width:220px;right:var(--gutter);top:190px}
 }
-
-/* ---- figure rhythm (v3) ---- */
 .section figure,.section .led-card,.section .chart-card{margin:64px 0 64px}
 .section figure figcaption{margin-top:20px;padding-top:14px;border-top:1px solid var(--g3);line-height:1.55}
 .qfig{font-size:16.5px}
@@ -300,3 +260,101 @@ figure,.led-card{max-width:100%}
   .fig-mat{padding:14px}
 }
 .st-vis:has(svg.motif){left:var(--edge);right:var(--edge)}
+.hero-field{right:var(--edge);left:auto;top:50%;width:min(560px,max(340px,calc(100vw - 2 * var(--edge) - 700px)),calc(100svh - 160px));max-width:calc(100% - 2 * var(--edge));aspect-ratio:1;transform:translateY(-50%);overflow:hidden}
+.bloch-canvas,.bloch-static,.bloch-static svg{max-width:100%;max-height:100%}
+@media (max-width:900px){
+  .hero-field{left:50%;right:auto;top:84px;width:min(calc(100vw - 2 * var(--gutter)),420px);max-width:none;transform:translateX(-50%)}
+  .hero .frame{padding-top:calc(min(100vw - 2 * var(--gutter),420px) + 100px)}
+}
+.qf-mob{display:none}@media (max-width:700px){.qf-desk{display:none}.qf-mob{display:block}}
+.bar-nav a,.tag{white-space:nowrap}@media (max-width:1360px){.tag{display:none}}
+
+/* =====================================================================================
+   RESPONSIVE PASS (13 Nov 2026): every visual sized by its container, nothing over text.
+   ===================================================================================== */
+/* captions for the labelled diagrams on the Part openers */
+.pb-fig{margin:0}
+.pb-cap{display:block;margin:16px 0 0;font:400 13.5px/1.55 var(--f-body);color:var(--ink-2);max-width:60ch}
+.pb-cap-k{display:block;font:700 11px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:5px}
+.pb-cap a{color:var(--lime);text-decoration:none;border-bottom:1px solid var(--lime-line)}
+.part-banner .pb-fig{z-index:1;opacity:1}
+.part-banner .pb-fig svg{opacity:.95}
+/* desktop and laptop: a captioned diagram sits in the flow, top-right, above the title block, so the
+   two can never overlap at any width; the outlined numeral keeps its place on the left */
+@media (min-width:901px){
+  .part-banner{flex-direction:column;align-items:stretch;justify-content:flex-end;padding-top:72px;min-height:max(92svh,820px)}
+  .part-banner .pb-vis{position:relative;inset:auto;top:auto;right:auto;align-self:flex-end;width:min(46vw,640px);margin:0 -10px 48px 0;transform:none}
+  .part-banner .pb-vis:has(svg.bloch){top:auto;left:auto;right:auto;width:min(30vw,calc(92svh - 420px),440px);min-width:260px;margin:0 0 32px 0}
+  .part-banner .part-banner-in{max-width:min(960px,100%)}
+  /* the "Secure now. Prove what works. Build for advantage." band: the sphere sits whole in a square box
+     to the right of the line, sized to the band, never cropped */
+  .st-band:has(svg.bloch){min-height:max(80svh,640px);padding-top:90px;padding-bottom:90px}
+  .st-vis:has(svg.bloch){top:50%;bottom:auto;left:auto;right:var(--edge);width:min(42vw,calc(80svh - 60px),680px);height:auto;aspect-ratio:1;transform:translateY(-50%)}
+  .st-vis:has(svg.bloch) svg.bloch{width:100%;height:100%}
+  .st-band:has(svg.bloch) .st-in{max-width:min(900px,calc(100% - min(42vw,680px) - 32px))}
+}
+
+/* tablets and phones: banners and statement bands stack. Numeral, then picture, then words. */
+@media (max-width:900px){
+  .part-banner{flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:auto;padding:40px var(--gutter) 64px}
+  .pb-num{position:relative;left:auto;top:auto;display:block;font-size:clamp(96px,26vw,150px);line-height:.8;margin:0 0 22px -.04em;z-index:0}
+  .pb-vis,.pb-vis:has(svg.bloch){position:relative;inset:auto;left:auto;right:auto;top:auto;width:100%;max-width:640px;margin:0 0 40px;opacity:1;transform:none;z-index:0}
+  .pb-vis:has(svg.bloch){width:min(62vw,300px);margin:-8px auto 32px}
+  .pb-vis svg{width:100%;height:auto}
+
+  .st-band,.st-band:has(svg.bloch){flex-direction:column;align-items:stretch;justify-content:center;min-height:auto;padding:84px var(--gutter) 60px}
+  .st-band .st-in,.st-band:has(svg.bloch) .st-in{max-width:none}
+  .st-vis,.st-vis:has(svg.bloch),.st-vis:has(svg.motif){position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;order:2;width:100%;height:auto;margin:44px 0 0;opacity:.95;z-index:0}
+  .st-vis svg{width:100%;height:auto;display:block}
+  .st-vis:has(svg.bloch){width:min(78vw,400px);margin:40px auto 0}
+  .st-vis svg.bloch{width:100%;height:auto;aspect-ratio:1}
+  .st-vis:has(svg.motif){max-width:640px}
+
+  /* motif labels: larger in the drawing's own units, so they stay ~11 px+ on screen */
+  .m-slit text.lab,.m-circuit text.lab{font-size:28px}
+  .m-bell text.lab{font-size:28px}.m-bell text.lab2{font-size:25px}
+  .m-net text.lab{font-size:25px}
+  .m-amp text.lab{font-size:26px}
+}
+@media (max-width:600px){
+  .m-slit text.lab,.m-circuit text.lab{font-size:34px}
+  .m-bell text.lab{font-size:34px}.m-bell text.lab2{font-size:30px}
+  .m-net text.lab{font-size:28px;letter-spacing:0}
+  .m-amp text.lab{font-size:32px}
+  .m-amp text.ket{display:none}
+  .pb-cap{font-size:14px}
+}
+
+/* tables: on a phone each row becomes a card, each cell labelled with its column */
+@media (max-width:600px){
+  .led-wrap{overflow:visible}
+  .led{min-width:0;font-size:15px}
+  .led thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .led,.led tbody,.led tr,.led th,.led td{display:block;width:auto!important}
+  .led tbody tr{padding:12px 0 8px}
+  .led tbody th{padding:4px 14px 8px;font-size:16px}
+  .led td{padding:4px 14px 8px}
+  .led td[data-label]::before{content:attr(data-label);display:block;font:700 10.5px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:2px}
+  .led td:empty{display:none}
+  .led tr.tbl-group td{padding:7px 14px}
+  .led tr.tbl-group td::before{content:none}
+}
+
+/* small fixed items */
+.qr-frame{max-width:100%}
+.foot-brand{flex-wrap:wrap}
+.pw-logo{max-width:100%}
+.hero-qfinex-lockup img{max-width:100%}
+.ref-item{min-width:0}
+@media (max-width:420px){.ref-list{columns:1}.ref-item{grid-template-columns:40px minmax(0,1fr)}}
+@media (max-width:360px){.bar{gap:8px}.brand{gap:8px}.btn-hero{padding:12px 14px}}
+
+/* tap to enlarge: any diagram opens full screen, wide enough to read, and pans */
+.zoomable{cursor:zoom-in}
+.zoom-dlg{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;border:0;padding:0;background:#000;color:var(--ink);z-index:100}
+.zoom-dlg::backdrop{background:rgba(0,0,0,.9)}
+.zoom-scroll{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch;display:grid;place-items:center;padding:56px 16px 24px}
+.zoom-scroll svg{width:max(100%,min(1000px,180vw));height:auto;display:block}
+.zoom-x{position:fixed;top:10px;right:12px;z-index:2;background:#000;border:1px solid var(--lime);color:var(--lime);font:700 13px var(--f-mono);letter-spacing:.1em;padding:9px 12px;cursor:pointer}
+.zoom-hint{display:none;font:400 11px var(--f-mono);letter-spacing:.08em;color:var(--mute);margin:8px 0 0}
+@media (hover:none) and (max-width:900px){.zoom-hint{display:block}}
