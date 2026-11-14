@@ -228,3 +228,11 @@
   .bar-r .btn.sm{padding:8px 12px;font-size:13px}
 }
 @media (max-width:480px){.site-tabs .tl-long{display:none}.site-tabs a{padding:0 14px}}
+
+/* ---------- top nav (owner, 14 Nov 16:09): aligned to the 1440 px content column (--edge); tabs fill the width on phones ---------- */
+.site-tabs a{display:block;line-height:38px}
+@media (max-width:760px){
+  .site-tabs{padding-left:0;padding-right:0;gap:0}
+  .site-tabs .tabs-k{display:none}
+  .site-tabs a{flex:1 1 0;text-align:center;padding:0 6px;min-width:0}
+}
