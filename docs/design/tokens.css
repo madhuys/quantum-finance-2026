@@ -1,26 +1,35 @@
-@font-face { font-family: "Space Grotesk"; src: url("../fonts/SpaceGrotesk-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Space Grotesk"; src: url("../fonts/SpaceGrotesk-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "IBM Plex Sans"; src: url("../fonts/IBMPlexSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+/* Q-FINEX brand tokens (Q-Finex Brand Book, Nov 2026): Midnight Navy + Vital Green lead; Deep White text on navy;
+   Wave Blue and Dynamic Purple support. Display: MOAM91. Reading: Open Sans (Regular, Semibold). */
+@font-face { font-family: "MOAM91"; src: url("../fonts/MOAM91.otf") format("opentype"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Open Sans"; src: url("../fonts/OpenSans-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Open Sans"; src: url("../fonts/OpenSans-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Open Sans"; src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Open Sans"; src: url("../fonts/OpenSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
 :root {
-  --black: #000000;
-  --g0: #0A0A0A;   
-  --g1: #111111;   
-  --g2: #1A1A1A;   
-  --g3: #2A2A2A;   
-  --g4: #3A3A3A;   
-  --ink: #F5F5F5;  
-  --ink-2: #C9C9C9;
-  --mute: #9CA3AF; 
-  --mute-2: #6B7280;
-  --lime: #D0EF1B; 
-  --neon: #E6FF3D; 
+  /* core */
+  --navy: #000120;        /* Midnight Navy */
+  --lime: #D0EF1B;        /* Vital Green */
+  --deep-white: #F5F5F5;  /* Deep White */
+  /* supporting */
+  --wave-blue: #0050E7;
+  --purple: #CD34E8;
+  /* navy surfaces (tints of Midnight Navy) */
+  --black: #000120;
+  --g0: #000120;
+  --g1: #060A33;
+  --g2: #0C1140;
+  --g3: #1F2558;
+  --g4: #333A72;
+  /* text on navy (all >= 4.5:1 on #000120) */
+  --ink: #F5F5F5;
+  --ink-2: #CDD0E3;
+  --mute: #A3A7C6;
+  --mute-2: #8489AE;
+  /* accent aliases kept for the existing rules; neon retired (not in the palette) */
+  --neon: #D0EF1B;
   --lime-dim: rgba(208, 239, 27, 0.14);
-  --lime-line: rgba(208, 239, 27, 0.45);
-  --f-head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --f-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --lime-line: rgba(208, 239, 27, 0.55);
+  --f-head: "MOAM91", "Open Sans", Arial, sans-serif;
+  --f-body: "Open Sans", Arial, sans-serif;
+  --f-mono: "Open Sans", Arial, sans-serif;
 }
