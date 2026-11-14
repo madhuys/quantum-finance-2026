@@ -1,26 +1,34 @@
 /* Shared site tabs (all pages) + the Challenge and Readiness Index pages. Q-FINEX brand (Nov 2026). */
 
-/* ---------- site tabs: a slim strip above the header on every page ---------- */
-.site-tabs{position:fixed;inset:0 0 auto 0;height:40px;z-index:45;display:flex;align-items:stretch;gap:2px;padding:0 var(--edge);background:var(--g1);border-bottom:1px solid var(--g3);overflow-x:auto;scrollbar-width:none}
+/* ---------- ONE fixed top bar on every page (owner, 14 Nov): page tabs left, the page's action right, on the --edge column.
+   The GFTN masthead (logo, title, section links) sits under it in the page and scrolls away. ---------- */
+:root{--topbar-h:56px}
+.topbar{position:fixed;inset:0 0 auto 0;height:var(--topbar-h);z-index:45;display:flex;align-items:stretch;justify-content:space-between;gap:16px;padding:0 var(--edge);background:rgba(0,1,32,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--g3)}
+.site-tabs{display:flex;align-items:stretch;gap:2px;min-width:0;flex:0 1 auto;overflow-x:auto;scrollbar-width:none}
 .site-tabs::-webkit-scrollbar{display:none}
-.site-tabs a{display:flex;align-items:center;padding:0 16px;font:600 13px/1 var(--f-body);letter-spacing:.02em;color:var(--mute);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
+.site-tabs a{display:block;padding:0 16px;font:600 13px/calc(var(--topbar-h) - 4px) var(--f-body);letter-spacing:.02em;color:var(--mute);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;border-top:2px solid transparent}
 .site-tabs a:hover{color:var(--ink)}
 .site-tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--lime)}
 .site-tabs .tabs-k{display:flex;align-items:center;margin-right:10px;font:600 11px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute-2);white-space:nowrap}
+.top-act{display:flex;align-items:center;justify-content:flex-end;flex:0 0 auto;gap:10px}
+.top-act .dl-ic{width:40px;height:40px}
+.top-act .btn.sm{padding:9px 16px;font-size:14px}
+.top-act .ic{width:18px;height:18px;display:none}
+.top-act [hidden]{display:none!important}
+.masthead{position:absolute;top:var(--topbar-h);left:0;right:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px var(--edge);color:#fff}
+.progress-rail{top:calc(var(--topbar-h) - 2px)}
+.has-tabs .hero .frame{padding-top:calc(var(--topbar-h) + 120px)}
+.has-tabs .chapter-rail{top:calc(var(--topbar-h) + 40px)}
+.has-tabs [id]{scroll-margin-top:calc(var(--topbar-h) + 24px)}
+@media (max-width:900px){.has-tabs .hero .frame{padding-top:calc(var(--topbar-h) + 96px)}}
 @media (max-width:560px){.site-tabs .tabs-k{display:none}.site-tabs a{padding:0 12px}}
-.has-tabs .bar{top:40px}
-.has-tabs .progress-rail{top:40px}
-.has-tabs .hero .frame{padding-top:150px}
-.has-tabs .chapter-rail{top:136px}
-.has-tabs [id]{scroll-margin-top:120px}
-@media (max-width:900px){.has-tabs .hero .frame{padding-top:140px}}
 
 /* ---------- sub-page building blocks ---------- */
 .sp main{display:block}
 .wrap{padding-left:var(--edge);padding-right:var(--edge)}
 .sp-hero{position:relative;min-height:min(100svh,920px);background:var(--navy);overflow:hidden;isolation:isolate;display:flex;align-items:center}
 .sp-hero .hero-kv img{animation:kv-drift 28s ease-in-out infinite alternate}
-.sp-hero-in{position:relative;z-index:2;padding:170px var(--edge) 110px;max-width:calc(760px + 2 * var(--edge))}
+.sp-hero-in{position:relative;z-index:2;padding:calc(var(--topbar-h) + 132px) var(--edge) 110px;max-width:calc(760px + 2 * var(--edge))}
 .sp-eyebrow{font:600 12px/1.5 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin:0 0 18px;display:flex;align-items:center;gap:10px}
 .sp-eyebrow::before{content:"";width:22px;height:2px;background:var(--lime)}
 .sp-hero h1{font:400 clamp(40px,5vw,72px)/1.02 var(--f-head);margin:0 0 10px;color:var(--ink)}
@@ -140,7 +148,7 @@
 .rx-stage{position:relative;min-height:min(100svh,940px);background:var(--navy);overflow:hidden;isolation:isolate}
 .rx-stage .hero-kv{transition:opacity .5s}
 .rx-stage.dim .hero-kv{opacity:.25}
-.rx-in{position:relative;z-index:2;padding:160px var(--edge) 90px}
+.rx-in{position:relative;z-index:2;padding:calc(var(--topbar-h) + 124px) var(--edge) 90px}
 .screen{display:none;max-width:980px}
 .screen.is-on{display:block;animation:rx-in .35s ease-out}
 @keyframes rx-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -221,18 +229,32 @@
 .sp-hero .hero-kv::after,.rx-stage .hero-kv::after{background:linear-gradient(90deg,var(--navy) 0%,rgba(0,1,32,.92) 42%,rgba(0,1,32,.2) 74%,rgba(0,1,32,0) 100%)}
 @media (max-width:900px){
   .sp-hero{align-items:flex-start}
-  .sp-hero-in{padding:150px var(--gutter) calc(62vw + 30px)}
-  .rx-in{padding:140px var(--gutter) 70px}
+  .sp-hero-in{padding:calc(var(--topbar-h) + 100px) var(--gutter) calc(62vw + 30px)}
+  .rx-in{padding:calc(var(--topbar-h) + 96px) var(--gutter) 70px}
   .sp-hero .hero-kv img,.rx-stage .hero-kv img{top:auto;height:auto;width:100%;min-width:0;object-position:center bottom}
   .sp-hero .hero-kv::after,.rx-stage .hero-kv::after{background:linear-gradient(180deg,var(--navy) 0%,var(--navy) 50%,rgba(0,1,32,0) 80%)}
-  .bar-r .btn.sm{padding:8px 12px;font-size:13px}
 }
-@media (max-width:480px){.site-tabs .tl-long{display:none}.site-tabs a{padding:0 14px}}
-
-/* ---------- top nav (owner, 14 Nov 16:09): aligned to the 1440 px content column (--edge); tabs fill the width on phones ---------- */
-.site-tabs a{display:block;line-height:38px}
+/* phones: the three tabs share the width; the action is a 44 px icon or compact button at the right */
+@media (max-width:640px){.site-tabs .tl-long{display:none}}
 @media (max-width:760px){
-  .site-tabs{padding-left:0;padding-right:0;gap:0}
+  .topbar{padding:0 6px 0 0;gap:6px}
+  .site-tabs{flex:1 1 auto;gap:0}
   .site-tabs .tabs-k{display:none}
-  .site-tabs a{flex:1 1 0;text-align:center;padding:0 6px;min-width:0}
+  .site-tabs a{flex:1 1 0;text-align:center;padding:0 6px;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .top-act .dl-ic{width:44px;height:44px}
+  .top-act .btn.sm{min-height:44px;padding:0 14px;font-size:13px}
 }
+@media (max-width:440px){
+  .site-tabs a{padding:0 3px;font-size:12.5px}
+  .top-act .btn.sm{width:44px;padding:0;justify-content:center;gap:0}
+  .top-act .btn.sm .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .top-act .ic{display:block}
+  .top-act .top-reg::after{font-size:18px}
+}
+
+/* hero wave in three.js (hero-wave.js) over the KV poster; the scrim (::after) stays on top of both */
+.hero-kv .kv-gl{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.2s ease}
+.hero-kv.gl-on .kv-gl{opacity:1}
+.hero-kv img{transition:opacity 1.2s ease}
+.hero-kv.gl-on img{opacity:0}
+@media (max-width:900px){.hero-kv .kv-gl{top:auto;height:min(100%,92vw)}}

@@ -17,14 +17,19 @@
 <body class="sp has-tabs" id="top">
 <a class="skip" href="#stage">Skip to the readiness check</a>
 
+<div class="topbar">
 <nav class="site-tabs" aria-label="Q-FINEX pages">
   <span class="tabs-k">Q-FINEX</span>
   <a href="index.html"><span class="tl-long">Quantum Finance </span>Report</a>
   <a href="challenge.html">Challenge</a>
   <a href="readiness.html" aria-current="page">Readiness<span class="tl-long"> Index</span></a>
 </nav>
+  <div class="top-act">
+    <button type="button" class="btn sm top-home" data-action="restart" hidden aria-label="Back to start" title="Back to start"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Back to start</span></button>
+  </div>
+</div>
 
-<header class="bar">
+<header class="masthead">
   <a class="brand" href="#top" aria-label="GFTN · Q-FINEX Quantum Readiness Index">
     <img class="gftn-mark" src="assets/gftn-logo-white.svg" alt="GFTN">
     <span class="brand-sep" aria-hidden="true"></span>
@@ -36,13 +41,10 @@
     <a href="#why">Why Q-FINEX</a>
     <a href="#founding">Founding partners</a>
   </nav>
-  <span class="bar-r">
-    <button type="button" class="btn sm top-home" data-action="restart" hidden>Back to start</button>
-  </span>
 </header>
 
 <main>
-<section class="rx-stage" id="stage" aria-label="Quantum Readiness Index preview">
+<section class="rx-stage" data-wave id="stage" aria-label="Quantum Readiness Index preview">
   <div class="hero-kv" aria-hidden="true">
     <img src="assets/qfinex-kv-1400.webp" srcset="assets/qfinex-kv-800.webp 800w, assets/qfinex-kv-1400.webp 1400w, assets/qfinex-kv-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="1350" fetchpriority="high">
   </div>
@@ -157,6 +159,7 @@
   <p>Q-FINEX Quantum Readiness Index preview. Indicative only, not regulatory or legal advice. Answers are not stored or sent anywhere. Model based on Mosca’s inequality (<a href="https://doi.org/10.1109/MSP.2018.3761723" target="_blank" rel="noopener">IEEE Security &amp; Privacy, 2018</a>); NIST dates from <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf" target="_blank" rel="noopener">NIST IR 8547</a>.</p>
   <p>Q-FINEX is a GFTN initiative with The University of Western Australia.</p>
 </footer>
+<script type="module" src="hero-wave.js"></script>
 <script src="readiness-core.js"></script>
 <script src="subpages.js"></script>
 </body>
