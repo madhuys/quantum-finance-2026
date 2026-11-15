@@ -456,3 +456,7 @@ figure,.led-card{max-width:100%}
   .part-banner .pb-head .pb-num{justify-self:center;text-align:center}
   .part-banner .pb-head .pb-vis > svg{width:100%;justify-self:center}
 }
+
+/* Key visual behind Part banners and the Q-FINEX block: sharper source (from qfinex-kv-full.png), 2x on retina/wide screens. */
+.part-banner::after,.powered{background-image:url(assets/qfinex-kv-band-1600.webp);background-image:image-set(url(assets/qfinex-kv-band-1600.webp) 1x,url(assets/qfinex-kv-band-3200.webp) 2x)}
+@media (min-width:1500px){.part-banner::after,.powered{background-image:url(assets/qfinex-kv-band-3200.webp)}}
