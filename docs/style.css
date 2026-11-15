@@ -460,3 +460,12 @@ figure,.led-card{max-width:100%}
 /* Key visual behind Part banners and the Q-FINEX block: sharper source (from qfinex-kv-full.png), 2x on retina/wide screens. */
 .part-banner::after,.powered{background-image:url(assets/qfinex-kv-band-1600.webp);background-image:image-set(url(assets/qfinex-kv-band-1600.webp) 1x,url(assets/qfinex-kv-band-3200.webp) 2x)}
 @media (min-width:1500px){.part-banner::after,.powered{background-image:url(assets/qfinex-kv-band-3200.webp)}}
+/* PART BANNERS, row 3 (15 Nov 2026): the whole banner (numeral+graphic, caption, section label, title, list) centred as one column. */
+@media (min-width:901px){
+  .part-banner{flex-direction:column;align-items:center;justify-content:flex-end}
+  .part-banner .pb-head .pb-cap{justify-self:center;text-align:center;margin-left:auto;margin-right:auto}
+  .part-banner .part-banner-in{width:100%;max-width:1240px;margin-left:auto;margin-right:auto;text-align:center}
+  .part-banner .part-banner-in .part-k{justify-content:center}
+  .part-banner .pb-list{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 48px}
+  .part-banner .pb-list li{flex:0 1 380px}
+}
