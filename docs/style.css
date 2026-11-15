@@ -469,3 +469,9 @@ figure,.led-card{max-width:100%}
   .part-banner .pb-list{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 48px}
   .part-banner .pb-list li{flex:0 1 380px}
 }
+/* PART BANNERS, row 4: caption centred on the whole banner (spans numeral + graphic columns), not just under the graphic. */
+@media (min-width:901px){
+  .part-banner .pb-head .pb-vis{display:contents}
+  .part-banner .pb-head .pb-vis > svg{grid-column:2;grid-row:1;align-self:center}
+  .part-banner .pb-head .pb-cap{grid-column:1 / -1;grid-row:2;justify-self:center;text-align:center;margin:16px auto 0}
+}
