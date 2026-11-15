@@ -433,3 +433,17 @@ figure,.led-card{max-width:100%}
 .part-banner::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;z-index:-2;background:url(assets/qfinex-kv-1400.webp) right bottom/cover no-repeat;opacity:.38;-webkit-mask-image:linear-gradient(180deg,transparent,#000 70%);mask-image:linear-gradient(180deg,transparent,#000 70%)}
 .powered{background:var(--navy) url(assets/qfinex-kv-1400.webp) right bottom/cover no-repeat;position:relative;isolation:isolate}
 .powered::before{content:"";position:absolute;inset:0;background:rgba(0,1,32,.72);z-index:-1}
+
+/* =====================================================================================
+   PART BANNERS (15 Nov 2026): numeral and graphic on one row on desktop, numeral
+   vertically centred on the picture (not its caption); phones keep the stack.
+   ===================================================================================== */
+.pb-head{position:relative}
+@media (min-width:901px){
+  .part-banner .pb-head{display:grid;grid-template-columns:auto minmax(0,var(--pbv,660px));grid-template-rows:auto auto;column-gap:clamp(32px,4.5vw,80px);justify-content:start;align-items:center;margin:0 0 56px}
+  .part-banner .pb-head .pb-num{position:static;inset:auto;grid-column:1;grid-row:1;align-self:center;font-size:clamp(150px,15vw,250px);line-height:.8;margin:0;z-index:0}
+  .part-banner .pb-head .pb-vis,.part-banner .pb-head .pb-vis:has(svg.bloch){position:relative;inset:auto;top:auto;right:auto;left:auto;grid-column:2;grid-row:1 / span 2;align-self:start;width:100%;min-width:0;margin:0;transform:none;display:grid;grid-template-rows:subgrid;z-index:0}
+  .part-banner .pb-head .pb-vis > svg{grid-row:1;align-self:center}
+  .part-banner .pb-head .pb-cap{grid-row:2}
+  .part-banner .pb-head:has(svg.bloch){--pbv:clamp(280px,30vw,400px)}
+}
