@@ -447,3 +447,12 @@ figure,.led-card{max-width:100%}
   .part-banner .pb-head .pb-cap{grid-row:2}
   .part-banner .pb-head:has(svg.bloch){--pbv:clamp(280px,30vw,400px)}
 }
+
+/* PART BANNERS, row 2 (15 Nov 2026): numeral + graphic as one centred unit that spans the banner width;
+   numeral vertically centred on the picture. */
+@media (min-width:901px){
+  .part-banner .pb-head{width:100%;max-width:1240px;margin-left:auto;margin-right:auto;grid-template-columns:auto minmax(0,1fr);justify-content:center;justify-items:stretch}
+  .part-banner .pb-head:has(svg.bloch){grid-template-columns:auto minmax(0,var(--pbv));justify-content:center;column-gap:clamp(48px,7vw,140px)}
+  .part-banner .pb-head .pb-num{justify-self:center;text-align:center}
+  .part-banner .pb-head .pb-vis > svg{width:100%;justify-self:center}
+}
