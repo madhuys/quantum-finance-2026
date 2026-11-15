@@ -237,3 +237,37 @@
   });
   window.__motifAnim = items; // for QA only
 })();
+
+/* Part banners (desktop): centre the big numeral's INK on the DRAWING, not on the svg box that also holds the labels
+   below it, nor on the numeral's own line box (the display face draws its glyph high in the box).
+   C = drawing's vertical centre / viewBox height, measured from the svgs (15 Nov 2026); others use the box centre. */
+(function () {
+  var C = { 'm-slit': 240 / 520, 'm-bell': 230 / 520 };
+  var ctx = document.createElement('canvas').getContext('2d');
+  function inkMid(n, top, h) {
+    var cs = getComputedStyle(n);
+    ctx.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+    var m = ctx.measureText(n.textContent.trim());
+    if (!m.fontBoundingBoxAscent) return top + h / 2;
+    var lh = parseFloat(cs.lineHeight) || h;
+    var base = top + (lh - m.fontBoundingBoxAscent - m.fontBoundingBoxDescent) / 2 + m.fontBoundingBoxAscent;
+    return base - (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2;
+  }
+  function run() {
+    document.querySelectorAll('.part-banner .pb-head').forEach(function (h) {
+      var n = h.querySelector('.pb-num'), s = h.querySelector('svg');
+      if (!n) return;
+      n.style.transform = '';
+      if (!s || window.innerWidth < 901) return;
+      var c = 0.5;
+      for (var k in C) if (s.classList.contains(k)) c = C[k];
+      var sr = s.getBoundingClientRect(), nr = n.getBoundingClientRect();
+      var d = sr.top + c * sr.height - inkMid(n, nr.top, nr.height);
+      n.style.transform = 'translateY(' + d.toFixed(1) + 'px)';
+    });
+  }
+  window.addEventListener('resize', run);
+  window.addEventListener('load', run);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(run);
+  run();
+})();
